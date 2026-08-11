@@ -2,15 +2,16 @@
 using namespace std;
 int main()
 {
-    int n = 3;
-    int count = 0;
+    int n = 10;
+    int oddSum = 0;
     int i = 1;
     while (i <= n)
     {
-        count += i;
+        if (i % 2 == 0)
+        {
+            oddSum += i;
+        }
         i++;
-        // cout << count << endl;
     }
-
-    cout << count << endl;
+    cout << "Odd number: " << oddSum << endl;
 }
