@@ -16,6 +16,8 @@ int main()
     //  }
 
     // Pattern for printing numbers like 1 2 3 4 5 6 7 ....
+
+    
     int n = 4;
     int num = 1;
     for (int i = 0; i < n; i++)
