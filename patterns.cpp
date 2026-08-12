@@ -32,12 +32,14 @@ int main()
 
     // Pattern for printing triangle of stars:
     int n = 4;
+    char ch = 'A';
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < i + 1; j++)
         {
-            cout << "*";
+            cout << ch << " ";
         }
+        ch = ch + 1; // implicit type conversion from char to int and then back to char
         cout << endl;
     }
 
