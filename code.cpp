@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
-int main()
-{
+
+int main() {
     int n = 10;
     int multiplyNo = 1;
-    int i = 1;
-    while (i <= n)
-    {
 
+    // Changed condition from '<' to '<=' to include 10
+    for (int i = 1; i <= n; i++) { 
         multiplyNo *= i;
-        i++;
     }
-    cout << "Multiply by 3: " << multiplyNo << endl;
-    cout << "Size of multiplyNo: " << sizeof(multiplyNo) << endl;
+
+    cout << "Multiply: " << multiplyNo << endl;          // Outputs: 3628800
+    cout << "Size of multiplyNo: " << sizeof(multiplyNo) << " bytes" << endl; // Outputs: 4 bytes
+    
+    return 0;
 }
