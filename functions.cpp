@@ -1,20 +1,32 @@
 #include <iostream>
 using namespace std;
 
-int sumOfN(int n)
-{
+// int sumOfN(int n)
+// {
 
-    int sum = 0;
-    for (int i = 1; i <= n; i++)
+//     int sum = 0;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         sum += i;
+//     }
+//     return sum;
+// }
+
+int sumOfDigits(int n)
+{
+    int digitSum = 0;
+    while (n > 0)
     {
-        sum += i;
+        int lastDigit = n % 10;
+        n /= 10;
+        digitSum += lastDigit;
     }
-    return sum;
+    return digitSum;
 }
 
 int main()
 {
 
-    cout << sumOfN(4) << endl;
+    cout << sumOfDigits(15) << endl;
     return 0;
 }
