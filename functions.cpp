@@ -45,39 +45,36 @@ using namespace std;
 //     return factN / (factR * factNR);
 // }
 
-// prime or not
-#include <iostream>
-using namespace std;
-
+// prime numbers in a number(n)
+// 1. This function returns 1 if prime, and 0 if not prime
 int isPrime(int n)
 {
-    // Numbers less than or equal to 1 are not prime
-    if (n <= 1)
-        return 0;
-
-    // Check numbers from 2 up to n-1
+    if (n <= 1) return 0; // 0 means False
+    
     for (int i = 2; i < n; i++)
     {
-        if (n % i == 0)
-        {
-            // Found a factor! It's definitely NOT prime. Exit immediately.
-            return 0;
-        }
+        if (n % i == 0) return 0; // Found a factor, return 0
     }
-
-    // Checked all numbers and found no factors. It IS prime!
-    return 1;
+    
+    return 1; // 1 means True
 }
 
 int main()
 {
-    if (isPrime(5) == 1)
+    int limit;
+    cout << "Enter the limit: ";
+    cin >> limit;
+    cout << "The prime numbers are: " << endl;
+
+    for (int i = 1; i <= limit; i++)
     {
-        cout << "5 is a Prime Number" << endl;
+        // 2. Check if the function returns 1 (True)
+        if (isPrime(i) == 1) 
+        {
+            cout << i << " " << endl; 
+        }
     }
-    else
-    {
-        cout << "5 is Not a Prime Number" << endl;
-    }
+
+    cout << endl; 
     return 0;
 }
