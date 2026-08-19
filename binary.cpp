@@ -15,6 +15,20 @@ int binaryNum(int decNum)
     return ans;
 }
 
+int decimalNum(int binaryNum)
+{
+    int ans = 0;
+    int pow = 1;
+    while (binaryNum > 0)
+    {
+        int lastDigit = binaryNum % 10;
+        binaryNum /= 10;
+        ans += lastDigit * pow;
+        pow *= 2;
+    }
+    return ans;
+}
+
 int main()
 {
     int decNum;
@@ -23,6 +37,9 @@ int main()
 
     int binaryRepresentation = binaryNum(decNum);
     cout << "Binary representation of " << decNum << " is: " << binaryRepresentation << endl;
+
+    int decimalRepresentation = decimalNum(binaryRepresentation);
+    cout << "Decimal representation of " << binaryRepresentation << " is: " << decimalRepresentation << endl;
 
     return 0;
 }
