@@ -12,16 +12,16 @@ using namespace std;
 //     }
 // }
 
-int linearSearch(int arr[], int size, int target)
+int reverseArray(int arr[], int size)
 {
-    for (int i = 0; i < size; i++)
+    int start = 0;
+    int end = size - 1;
+    while (start < end)
     {
-        if (arr[i] == target)
-        {
-            return i; // Return the index of the target element
-        }
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
     }
-    return -1; // Return -1 if the target element is not found
 }
 
 int main()
@@ -58,19 +58,14 @@ int main()
 
     // Linear Search Algorithim
 
-    int arr[] = {2, 4, 7, 8, 5, 3, 1};
-    int size = 7;
-    int target = 5;
+    int arr[] = {2, 4, 7, 8, 5, 3};
+    int size = 6;
 
-    int index = linearSearch(arr, size, target);
+    reverseArray(arr, size);
 
-    if (index != -1)
+    for (int i = 0; i < size; i++)
     {
-        cout << "Element " << target << " found at index " << index << endl;
-    }
-    else
-    {
-        cout << "Element " << target << " not found in the array." << endl;
+        cout << arr[i] << " ";
     }
 
     return 0;
