@@ -1,24 +1,38 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
-int product_add(int arr[], int size)
+// Changed return type to void since we are modifying the array directly
+void swapSm_Lg(int arr[], int size)
 {
-    int product = 1;
-    int sum = 0;
+    int smallestIdx = 0;
+    int largestIdx = 0;
 
-    for (int i = 0; i < size; i++)
+    for (int i = 1; i < size; i++) // Start from 1 since 0 is initialized
     {
-        product *= arr[i];
-        sum += arr[i];
+        if (arr[i] < arr[smallestIdx])
+            smallestIdx = i; // Store the index of the smallest
+        if (arr[i] > arr[largestIdx])
+            largestIdx = i;  // Store the index of the largest
     }
-
-    return product + sum;
+    
+    // Swap the actual values in the array using their indices
+    swap(arr[smallestIdx], arr[largestIdx]);
 }
 
 int main()
 {
-    int arr[] = {1, 2, 3};
-    int size = 3;
-    cout << product_add(arr, size) << endl;
+    int arr[] = {5, 2, 9, 1, 5, 6};
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    
+    // Call the function to modify the array
+    swapSm_Lg(arr, sz);
+    
+    // Print the modified array
+    for (int i = 0; i < sz; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
     return 0;
 }
